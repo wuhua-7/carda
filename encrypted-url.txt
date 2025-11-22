@@ -1,0 +1,97 @@
+凱撒密碼加密結果
+==================
+
+原始網址：wuhua-cyy.vercel.app
+
+加密方式：凱撒密碼（前推2位）
+
+加密結果：usfsy-aww.tcpacj.ynn
+
+==================
+Pale Blue Dot 原文（Book Code 密鑰）
+==================
+
+"Look again at that dot. That's here. That's home. That's us. On it everyone you love, everyone you know, everyone you ever heard of, every human being who ever was, lived out their lives. The aggregate of our joy and suffering, all the thousands of confident religions, ideologies, and economic doctrines, every hunter and forager, every hero and coward, every creator and destroyer of civilization, every king and peasant, every young couple in love, every mother and father, hopeful child, inventor and explorer, every teacher of morals, every corrupt politician, every superstar, every supreme leader, every saint and sinner in the history of our species lived there - on a mote of dust suspended in a sunbeam."
+
+對應關係：
+w → u
+u → s
+h → f
+u → s
+a → y
+- → -
+c → a
+y → w
+y → w
+. → .
+v → t
+e → c
+r → p
+c → a
+e → c
+l → j
+. → .
+a → y
+p → n
+p → n
+
+解密方法：
+將每個字母後推2位即可還原原始網址
+
+==================
+Book Code 加密結果
+==================
+
+加密目標：usfsy-aww.tcpacj.ynn（凱撒密碼加密後的網址）
+
+加密方式：Book Code（使用 Pale Blue Dot 原文作為密鑰）
+
+句子劃分：
+句1: Look again at that dot
+句2: That's here
+句3: That's home
+句4: That's us
+句5: On it everyone you love everyone you know everyone you ever heard of every human being who ever was lived out their lives
+句6: The aggregate of our joy and suffering all the thousands of confident religions ideologies and economic doctrines every hunter and forager every hero and coward every creator and destroyer of civilization every king and peasant every young couple in love every mother and father hopeful child inventor and explorer every teacher of morals every corrupt politician every superstar every supreme leader every saint and sinner in the history of our species lived there on a mote of dust suspended in a sunbeam
+
+待加密文本：u-s-f-s-y---a-w-w-.-t-c-p-a-c-j-.-y-n-n
+
+句子字母序列（僅字母，不含空格標點）：
+句1: Lookaagainathatdot (18個字母)
+     L-o-o-k-a-g-a-i-n-a-t-t-h-a-t-d-o-t
+     1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17-18
+
+句2: Thatshere (9個字母)
+句3: Thatshome (9個字母)
+句4: Thatsus (7個字母)
+句5: Oniteveryoneyoulove... (102個字母)
+句6: Theaggregateofourjoy... (很長)
+
+加密結果（格式：句子編號-字母位置，符號保持原樣）：
+4-6, 4-5, 6-26, 4-5, 5-9, -, 1-5, 5-34, 5-34, ., 1-11, 6-50, 6-177, 1-5, 6-50, 6-18, ., 5-9, 5-2, 5-2
+
+字母對應詳解：
+u - 4-6 (句4: T-h-a-t-s-U-s 第6個字母)
+s - 4-5 (句4: T-h-a-t-S-u-s 第5個字母)
+f - 6-26 (句6: ...suf-F-ering... 第26個字母)
+s - 4-5 (句4: T-h-a-t-S-u-s 第5個字母)
+y - 5-9 (句5: ...ever-Y-one... 第9個字母)
+- - [符號保持]
+a - 1-5 (句1: L-o-o-k-A-gain 第5個字母)
+w - 5-34 (句5: ...kno-W... 第34個字母)
+w - 5-34 (句5: ...kno-W... 第34個字母)
+. - [符號保持]
+t - 1-11 (句1: ...a-T-that... 第11個字母)
+c - 6-50 (句6: ...of-C-onfident... 第50個字母)
+p - 6-177 (句6: ...peasan-T... 第177個字母附近的p)
+a - 1-5 (句1: L-o-o-k-A-gain 第5個字母)
+c - 6-50 (句6: ...of-C-onfident... 第50個字母)
+j - 6-18 (句6: ...jo-Y... 第18個字母j)
+. - [符號保持]
+y - 5-9 (句5: ...ever-Y-one... 第9個字母)
+n - 5-2 (句5: O-N-it 第2個字母)
+n - 5-2 (句5: O-N-it 第2個字母)
+
+解密方法：
+1. 根據"句子編號-字母位置"在 Pale Blue Dot 原文中找到對應字母，得到：aypby-nqg.tcpacj.ynn
+2. 將這個凱撒密碼後推2位，還原成原始網址：carda-psi.vercel.app

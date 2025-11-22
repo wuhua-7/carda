@@ -1,0 +1,65 @@
+Book Code 計算過程
+==================
+
+待加密文本：aypby-nqg.tcpacj.ynn
+
+句1: "Look again at that dot"
+字母序列: L-o-o-k-a-g-a-i-n-a-t-t-h-a-t-d-o-t
+位置:      1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17-18
+
+句2: "That's here"
+字母序列: T-h-a-t-s-h-e-r-e
+位置:      1-2-3-4-5-6-7-8-9
+
+句3: "That's home"
+字母序列: T-h-a-t-s-h-o-m-e
+位置:      1-2-3-4-5-6-7-8-9
+
+句4: "That's us"
+字母序列: T-h-a-t-s-u-s
+位置:      1-2-3-4-5-6-7
+
+句5: "On it everyone you love, everyone you know, everyone you ever heard of, every human being who ever was, lived out their lives"
+字母序列: O-n-i-t-e-v-e-r-y-o-n-e-y-o-u-l-o-v-e-e-v-e-r-y-o-n-e-y-o-u-k-n-o-w-e-v-e-r-y-o-n-e-y-o-u-e-v-e-r-h-e-a-r-d-o-f-e-v-e-r-y-h-u-m-a-n-b-e-i-n-g-w-h-o-e-v-e-r-w-a-s-l-i-v-e-d-o-u-t-t-h-e-i-r-l-i-v-e-s
+位置:      1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17-18-19-20-21-22-23-24-25-26-27-28-29-30-31-32-33-34-35-36-37-38-39-40-41-42-43-44-45-46-47-48-49-50-51-52-53-54-55-56-57-58-59-60-61-62-63-64-65-66-67-68-69-70-71-72-73-74-75-76-77-78-79-80-81-82-83-84-85-86-87-88-89-90-91-92-93-94-95-96-97-98-99-100-101-102
+
+尋找字母：
+a - 句5位置51 (heard的a)
+y - 句5位置9 (everyone的y)
+p - 需要在句6找
+b - 需要在句6找
+y - 句5位置9
+n - 句5位置2 (On的n)
+q - 需要在句6找（可能沒有q）
+g - 句5位置70 (being的g)
+t - 句2位置1 或 句5位置4 或 句5位置91
+c - 需要在句6找
+p - 需要在句6找
+a - 句5位置51
+c - 需要在句6找
+j - 需要在句6找
+y - 句5位置9
+n - 句5位置2
+n - 句5位置2
+
+現在計算句6...
+
+
+句6: "The aggregate of our joy and suffering, all the thousands of confident religions, ideologies, and economic doctrines, every hunter and forager, every hero and coward, every creator and destroyer of civilization, every king and peasant, every young couple in love, every mother and father, hopeful child, inventor and explorer, every teacher of morals, every corrupt politician, every superstar, every supreme leader, every saint and sinner in the history of our species lived there - on a mote of dust suspended in a sunbeam"
+
+句6字母序列（前100個字母）:
+T-h-e-a-g-g-r-e-g-a-t-e-o-f-o-u-r-j-o-y-a-n-d-s-u-f-f-e-r-i-n-g-a-l-l-t-h-e-t-h-o-u-s-a-n-d-s-o-f-c-o-n-f-i-d-e-n-t-r-e-l-i-g-i-o-n-s-i-d-e-o-l-o-g-i-e-s-a-n-d-e-c-o-n-o-m-i-c-d-o-c-t-r-i-n-e-s-e-v-e-r-y
+1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17-18-19-20-21-22-23-24-25-26-27-28-29-30-31-32-33-34-35-36-37-38-39-40-41-42-43-44-45-46-47-48-49-50-51-52-53-54-55-56-57-58-59-60-61-62-63-64-65-66-67-68-69-70-71-72-73-74-75-76-77-78-79-80-81-82-83-84-85-86-87-88-89-90-91-92-93-94-95-96-97-98-99-100
+
+繼續句6（101-200）:
+h-u-n-t-e-r-a-n-d-f-o-r-a-g-e-r-e-v-e-r-y-h-e-r-o-a-n-d-c-o-w-a-r-d-e-v-e-r-y-c-r-e-a-t-o-r-a-n-d-d-e-s-t-r-o-y-e-r-o-f-c-i-v-i-l-i-z-a-t-i-o-n-e-v-e-r-y-k-i-n-g-a-n-d-p-e-a-s-a-n-t-e-v-e-r-y-y-o-u-n-g
+101-102-103-104-105-106-107-108-109-110-111-112-113-114-115-116-117-118-119-120-121-122-123-124-125-126-127-128-129-130-131-132-133-134-135-136-137-138-139-140-141-142-143-144-145-146-147-148-149-150-151-152-153-154-155-156-157-158-159-160-161-162-163-164-165-166-167-168-169-170-171-172-173-174-175-176-177-178-179-180-181-182-183-184-185-186-187-188-189-190-191-192-193-194-195-196-197-198-199-200
+
+找到的字母位置：
+p - 句6位置177 (peasant的p)
+b - 句6沒有b字母！需要用其他方案
+c - 句6位置50 (confident的c) 或 位置82 (economic的c)
+q - 句6沒有q字母！需要用其他方案
+j - 句6位置18 (joy的j)
+
+問題：句6中沒有 b 和 q！
