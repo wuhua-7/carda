@@ -23,28 +23,33 @@
         position: relative;
     }
 
-    /* 星空背景 */
+    /* 星軌效果 - 圍繞中心旋轉 */
     body::before {
         content: '';
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        top: 50%;
+        left: 50%;
+        width: 200%;
+        height: 200%;
+        transform-origin: center center;
         background-image: 
-            radial-gradient(2px 2px at 20px 30px, white, transparent),
-            radial-gradient(2px 2px at 60px 70px, white, transparent),
-            radial-gradient(1px 1px at 50px 50px, white, transparent),
-            radial-gradient(1px 1px at 130px 80px, white, transparent),
-            radial-gradient(2px 2px at 90px 10px, white, transparent);
-        background-size: 200px 200px;
-        background-position: 0 0, 40px 60px, 130px 270px, 70px 100px, 150px 50px;
-        animation: starMove 200s linear infinite;
-        opacity: 0.8;
+            repeating-conic-gradient(from 0deg at 50% 50%, 
+                transparent 0deg, 
+                rgba(255, 255, 255, 0.1) 0.5deg, 
+                transparent 1deg, 
+                transparent 10deg),
+            repeating-conic-gradient(from 45deg at 50% 50%, 
+                transparent 0deg, 
+                rgba(200, 220, 255, 0.08) 0.3deg, 
+                transparent 0.8deg, 
+                transparent 8deg);
+        animation: starTrails 300s linear infinite;
+        opacity: 0.6;
         z-index: 0;
+        pointer-events: none;
     }
 
-    /* 流星效果 */
+    /* 星點效果 */
     body::after {
         content: '';
         position: fixed;
@@ -52,16 +57,36 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: transparent;
+        background-image: 
+            radial-gradient(2px 2px at 20% 30%, white, transparent),
+            radial-gradient(1px 1px at 60% 70%, rgba(255,255,255,0.8), transparent),
+            radial-gradient(1px 1px at 50% 20%, white, transparent),
+            radial-gradient(2px 2px at 80% 10%, rgba(255,255,255,0.9), transparent),
+            radial-gradient(1px 1px at 90% 60%, white, transparent),
+            radial-gradient(1px 1px at 30% 80%, rgba(255,255,255,0.7), transparent),
+            radial-gradient(2px 2px at 70% 40%, white, transparent);
+        background-size: 200% 200%;
+        background-position: 0 0;
+        animation: starTwinkle 100s linear infinite;
         z-index: 0;
+        pointer-events: none;
     }
 
-    @keyframes starMove {
+    @keyframes starTrails {
         from {
-            transform: translateY(0) rotate(0deg);
+            transform: translate(-50%, -50%) rotate(0deg);
         }
         to {
-            transform: translateY(-200px) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg);
+        }
+    }
+
+    @keyframes starTwinkle {
+        0%, 100% {
+            opacity: 0.8;
+        }
+        50% {
+            opacity: 0.4;
         }
     }
 
