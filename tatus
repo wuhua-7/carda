@@ -1,0 +1,21 @@
+[1mdiff --git a/line-by-line-display.html b/line-by-line-display.html[m
+[1mindex 3cc6a6c..0186991 100644[m
+[1m--- a/line-by-line-display.html[m
+[1m+++ b/line-by-line-display.html[m
+[36m@@ -104,7 +104,7 @@[m
+ </head>[m
+ <body>[m
+     <div class="container">[m
+[31m-        <h1>逐行顯示效果</h1>[m
+[32m+[m[32m        <h1>這應該是個日志</h1>[m
+         [m
+         <div class="content" id="content"></div>[m
+ [m
+[36m@@ -164,7 +164,6 @@[m
+             "就讓他待在你身邊,當我的信物：）",[m
+             "希望你喜歡",[m
+             "(2025/8/1留)",[m
+[31m-            ""[m
+         ];[m
+ [m
+         let currentIndex = 0;[m
