@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>逐行顯示網頁</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft JhengHei', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .content {
+            line-height: 2;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .line {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+            margin-bottom: 10px;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .controls {
+            margin-top: 30px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .speed-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+
+        input[type="range"] {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>逐行顯示效果</h1>
+        
+        <div class="content" id="content"></div>
+
+        <div class="controls">
+            <button onclick="startDisplay()">開始顯示</button>
+            <button onclick="resetDisplay()">重新開始</button>
+            <button onclick="pauseDisplay()">暫停</button>
+            <button onclick="resumeDisplay()">繼續</button>
+        </div>
+
+        <div class="speed-control">
+            <label>速度：</label>
+            <input type="range" id="speed" min="100" max="2000" value="800" step="100">
+            <span id="speedValue">0.8秒</span>
+        </div>
+    </div>
+
+    <script>
+        // 要顯示的內容（可以自訂）
+        const lines = [
+            "歡迎來到逐行顯示網頁",
+            "這是第一行內容",
+            "這是第二行內容",
+            "每一行都會依序出現",
+            "你可以調整顯示速度",
+            "也可以暫停和繼續",
+            "這個效果很適合用來展示詩詞",
+            "或是重要的公告訊息",
+            "甚至可以用來做簡報",
+            "希望你喜歡這個效果！"
+        ];
+
+        let currentIndex = 0;
+        let intervalId = null;
+        let isPaused = false;
+        let displaySpeed = 800;
+
+        const contentDiv = document.getElementById('content');
+        const speedInput = document.getElementById('speed');
+        const speedValue = document.getElementById('speedValue');
+
+        // 速度控制
+        speedInput.addEventListener('input', (e) => {
+            displaySpeed = parseInt(e.target.value);
+            speedValue.textContent = (displaySpeed / 1000).toFixed(1) + '秒';
+            
+            if (intervalId && !isPaused) {
+                clearInterval(intervalId);
+                intervalId = setInterval(displayNextLine, displaySpeed);
+            }
+        });
+
+        function displayNextLine() {
+            if (currentIndex < lines.length) {
+                const lineDiv = document.createElement('div');
+                lineDiv.className = 'line';
+                lineDiv.textContent = lines[currentIndex];
+                lineDiv.style.animationDelay = '0s';
+                contentDiv.appendChild(lineDiv);
+                currentIndex++;
+            } else {
+                clearInterval(intervalId);
+                intervalId = null;
+            }
+        }
+
+        function startDisplay() {
+            if (intervalId) return;
+            
+            if (currentIndex >= lines.length) {
+                resetDisplay();
+            }
+            
+            isPaused = false;
+            intervalId = setInterval(displayNextLine, displaySpeed);
+        }
+
+        function resetDisplay() {
+            clearInterval(intervalId);
+            intervalId = null;
+            currentIndex = 0;
+            isPaused = false;
+            contentDiv.innerHTML = '';
+        }
+
+        function pauseDisplay() {
+            if (intervalId) {
+                clearInterval(intervalId);
+                intervalId = null;
+                isPaused = true;
+            }
+        }
+
+        function resumeDisplay() {
+            if (isPaused && currentIndex < lines.length) {
+                isPaused = false;
+                intervalId = setInterval(displayNextLine, displaySpeed);
+            }
+        }
+    </script>
+</body>
+</html>
